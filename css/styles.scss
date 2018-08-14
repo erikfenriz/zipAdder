@@ -1,0 +1,59 @@
+@mixin transition {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+@mixin centering {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: auto;
+}
+
+form {
+  @include centering;
+  top: 0;
+  input {
+    width: 150px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px #d5d5d5 solid;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    border-radius: 20px;
+    height: 24px;
+    background: cornflowerblue;
+    border: 1px #d5d5d5 solid;
+    @include transition;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background: darken(cornflowerblue, 10%);
+      @include transition;
+    }
+    &:active {
+      background: darken(cornflowerblue, 20%);
+    }
+  }
+}
+
+ul {
+  @include centering;
+  top: 10em;
+  li{
+    &:hover{
+      color: forestgreen;
+    }
+  }
+}
+
